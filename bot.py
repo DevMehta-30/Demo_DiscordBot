@@ -144,4 +144,4 @@ async def stop(ctx):
     else:
         await ctx.send("The bot is not playing anything at the moment.")
 
-bot.run("MTA4ODUxOTE1MjI2NTg3MTQ1MA.G_N0Vz.tUaUT21Dyv-_s1mU2713WlPQr6iTqWzZpPuMjk") 
+bot.run("Bot_Token") 
