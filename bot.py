@@ -104,6 +104,20 @@ async def leave(ctx):
 async def play(ctx,url):
     search=url
     yt = YoutubeSearch(search, max_results=1).to_json()
+    # await ctx.trigger_typing()
+
+    #     vc = ctx.voice_client
+
+    #     if not vc:
+    #         await ctx.invoke(self.connect_)
+
+    #     player = self.get_player(ctx)
+
+    #     # If download is False, source will be a dict which will be used later to regather the stream.
+    #     # If download is True, source will be a discord.FFmpegPCMAudio with a VolumeTransformer.
+    #     source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop, download=False)
+
+    #     await player.queue.put(source)
     try:
         yt_id = str(json.loads(yt)['videos'][0]['id'])
         yt_url = 'https://www.youtube.com/watch?v='+yt_id
@@ -134,7 +148,7 @@ async def resume(ctx):
     if voice_client.is_paused():
         await voice_client.resume()
     else:
-        await ctx.send("The bot was not playing anything before this. Use play_song command")
+        await ctx.send("The bot was not playing anything before this. Use play command")
 
 @bot.command(name='stop', help='Stops the song')
 async def stop(ctx):
@@ -144,4 +158,4 @@ async def stop(ctx):
     else:
         await ctx.send("The bot is not playing anything at the moment.")
 
-bot.run("Bot_Token") 
+bot.run("MTA4ODUxOTE1MjI2NTg3MTQ1MA.GabntT.bQVyX8rEGv5jogt4x_OSOxQHrU8-1sB-rdqE2Y") 
